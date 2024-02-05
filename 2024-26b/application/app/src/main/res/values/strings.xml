@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Exam</string>
+
+    <string name="main_screen">Home</string>
+    <string name="progress_screen">Your progress</string>
+    <string name="top_screen">Top</string>
+    <string name="add_entity_screen">Add an event</string>
+    <string name="update_entity_screen">Update your activity</string>
+
+    <string name="edit_icon_description">Edit Icon</string>
+    <string name="add_icon_description">Add Icon</string>
+    <string name="delete_icon_description">Delete Icon</string>
+
+    <string name="add_button_label">+</string>
+    <string name="add_entity_button_label">Add Event</string>
+    <string name="update_entity_button_label">Update Event</string>
+    <string name="delete_entity_confirmation_question">Are you sure you want to delete this activity?</string>
+    <string name="delete_entity_confirm">Yes</string>
+    <string name="delete_entity_dismiss">No</string>
+</resources>
