@@ -184,6 +184,7 @@ constructor(
                                 }
                             }
                         }
+
                         Log.d("EntitiesViewModel", "entitiesForProperties: ${state.value.entitiesForProperties[property]}")
                     } else {
                         deletionStatus.emit(false)
@@ -248,8 +249,18 @@ constructor(
                         action = null
                     )
                     _newEntity.value = newEntity
-                    addEntityAndUpdateState(newEntity)
-                    displayMealNotification()
+
+                    val foundEntity = localEntityRepository.findEntityByAttributes(
+                        newEntity.name,
+                        newEntity.type,
+                        newEntity.date,
+                        newEntity.calories)
+
+                    Log.d("EntitiesViewModel", "entity found: $foundEntity")
+                    if(foundEntity == null) {
+                        addEntityAndUpdateState(newEntity)
+                        displayMealNotification()
+                    }
                 }
             } catch (e: Exception) {
                 Log.e("EntitiesViewModel", "Error observing WebSocket events:", e)

@@ -12,6 +12,8 @@ interface LocalEntityRepository {
 
     suspend fun getEntityById(id: Int): Entity?
 
+    suspend fun findEntityByAttributes(name: String, type: String, date: String, calories: Int): Entity?
+
     suspend fun getEntitiesByProperty(property: Property): Flow<List<Entity>>
 
     suspend fun insertEntity(entity: Entity)

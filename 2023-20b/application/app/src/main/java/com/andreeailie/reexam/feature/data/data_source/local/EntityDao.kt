@@ -23,6 +23,9 @@ interface EntityDao {
     @Query("SELECT * FROM entities WHERE type = :property")
     fun getEntitiesByProperty(property: String): Flow<List<Entity>>
 
+    @Query("SELECT * FROM entities WHERE name = :name AND type = :type AND date = :date AND calories = :calories LIMIT 1")
+    suspend fun findEntityByAttributes(name: String, type: String, date: String, calories: Int): Entity?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEntity(entity: Entity)
 

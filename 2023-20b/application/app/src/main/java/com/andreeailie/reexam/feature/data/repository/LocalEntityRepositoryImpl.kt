@@ -28,6 +28,10 @@ class LocalEntityRepositoryImpl(
        return dao.getEntitiesByProperty(property.name)
     }
 
+   override suspend fun findEntityByAttributes(name: String, type: String, date: String, calories: Int): Entity? {
+        return dao.findEntityByAttributes(name, type, date, calories)
+    }
+
     override suspend fun insertEntity(entity: Entity) {
         dao.insertEntity(entity)
     }

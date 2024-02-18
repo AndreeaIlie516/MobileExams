@@ -20,13 +20,13 @@ fun NetworkObserver(snackbarHostState: SnackbarHostState, networkStatusTracker: 
             NetworkStatusTracker.NetworkStatus.Unavailable -> {
                 snackbarHostState.showSnackbar(
                     message = "Network connection lost",
-                    duration = SnackbarDuration.Long
+                    duration = SnackbarDuration.Short
                 )
             }
             NetworkStatusTracker.NetworkStatus.Available -> {
                 snackbarHostState.showSnackbar(
                     message = "Reconnected to the network",
-                    duration = SnackbarDuration.Long
+                    duration = SnackbarDuration.Short
                 )
             }
         }
